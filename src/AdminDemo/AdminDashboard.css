@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+input{
+    font-family: "Poppins", sans-serif;
+}
+
+.body1{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #eaeff2;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background-color: white;
+    padding: 7px 5px;
+    transition: all 0.5s ease;
+    border-radius: 10px; /*{side bar radius}*/
+    
+}
+
+.sidebar.active{
+    width: 240px;
+}
+
+.sidebar .logo_content .side_logo{
+    color: black;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    background-color: #eaeff2;
+    border-radius: 10px;
+}
+
+.sidebar.active .logo_content .side_logo{
+    opacity: 1;
+    pointer-events: none;
+}
+
+.side_logo img{
+    width: 40px;
+    margin-left: -40px;
+    margin-top: 5px;
+}
+
+.side_logo .logo_name{
+    margin-top: -2px;
+    margin-left: 15px;
+    font-weight: 800; /*{Increase the logo font size in the side bar}*/
+}
+
+.sidebar #btn{
+    color: black;
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    font-size: 20px;
+    height: 48px;
+    width: 48px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    margin-left: -2px;
+    margin-top: 2px;
+    font-weight: 600; /*{Increase the weight of the menu in the side bar}*/
+    background-color: #eaeff2;
+    border-radius: 12px;
+}
+
+.sidebar.active #btn{
+    left: 90%;
+}
+
+.sidebar.active #btn{
+    background-color: none;
+}
+
+.sidebar ul{
+    margin-top: 20px;
+}
+
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar .links_name{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active .links_name{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar ul li .tooltip{
+    position: absolute;
+    left: 122px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background-color: #fff;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgb(0,0,0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+
+.sidebar.active ul li .tooltip{
+    display: none;
+}
+
+.sidebar ul li:hover .tooltip{
+    opacity: 1;
+    transition: all 0.5s ease;
+    top: 50%;
+    margin-left: 10px;
+}
+
+.sidebar ul li a{
+    color: black;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+    font-weight: 500; /*{Increase the font size in the side bar}*/
+}
+
+.sidebar ul li a:hover{
+    color: white;
+    background-color: black;
+    transition: all 0.4s ease;
+}
+
+.sidebar ul li a i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 700; /*{Increase the weight of logos in the side bar}*/
+}
+
+.sidebar .profile_content{
+    position: absolute;
+    color: white;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer; /*{Add this for the Cursor in the sigout}*/
+}
+
+.sidebar .profile_content .profile{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background-color: none;
+    transition: all 0.4s ease;
+}
+
+.sidebar.active .profile_content .profile{
+    background-color: black;
+}
+
+.profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.sidebar.active .profile .profile_details{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.profile .profile_details .name_job{
+    margin-left: 50px;
+}
+
+.profile .profile_details .out{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.profile .profile_details .name{
+    font-size: 12px;
+}
+
+.profile #sign_out{
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 23px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s ease;
+    background-color: black;
+}
+
+.sidebar.active .profile #sign_out{
+    left: 88%;
+}
+
+.sidebar.active .profile #sign_out{
+    background-color: none;
+}
+
+.dashboard_content{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+}
+.dashboard_content .text{
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    margin: 12px;
+}
+
+.sidebar ~ .dashboard_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar.active ~ .dashboard_content{
+    width: calc(100% - 240px);
+    left: 240px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard_content .dashboard_box{
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    height: 640px;
+    background-color: white;
+    border-radius: 3.3rem;
+    
+}
+
+.dashboard_box .dashboard_innerbox{
+    position: absolute;
+    width: calc(100% - 4.1rem);
+    height: calc(100% - 4.1rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dashboard_innerbox span.title_sub_dash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -480px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.form_fav_sub{
+    position: absolute;
+    width: 50%;
+    height: 93%;
+    background-color: white;
+    border-radius: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 10px;
+}
+
+.form_fav_sub{
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.form_fav_sub::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.form_fav_sub ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+.form_fav_sub ul li{
+    height: 60px;
+    width: 100%;
+    margin: 10px 10px;
+    list-style: none;
+    border: 2px solid black;
+    box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+    background-color: #fff;
+    border-radius: 1rem;
+}
+
+.form_fav_sub ul li:hover{
+    border: 2px solid orange;
+    cursor: pointer;
+}
+
+.form_fav_sub ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    padding-left: 10px;
+    background-color: yellow;
+}
+
+/* .bx-trash{
+    transition: transform .2s;
+}
+
+.bx-trash:hover{
+    cursor: pointer;
+    color: red;
+    transform: scale(1.3);
+} */
+
+.form_fav_sub .fav_sub_code{
+    color: black;
+    font-weight: 500;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.form_messages{
+    position: absolute;
+    width: 47%;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    background-color: #ffefd5;
+    border-radius: 2rem;
+    margin-left: 3%;
+}
+
+.form_messages span.title_msg_dash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.form_messages ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0px 10px;
+}
+
+.form_messages ul li{
+    height: auto;
+    width: 100%;
+    margin: 10px 10px;
+    list-style: none;
+    background-color: white;
+    border-radius: 1rem;
+    border: 2px solid white;
+}
+
+.form_messages .msg_title{
+    display: inline-block;
+    color: black;
+    font-weight: 700;
+    font-size: 17px;
+    margin: 10px;
+}
+
+.form_messages ul li span.msg_description {
+    color: black;
+    font-size: 13px;
+    font-weight: 400;
+    display: inline-block; /* or display: block; */
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 20px;
+  background-color: #FCDFDA; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d63637;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom:8px;
+}

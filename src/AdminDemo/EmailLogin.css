@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.EmailBody{
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #eaeff2;
+}
+
+.Email_content{
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Email_box{
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    height: 640px;
+    background-color: white;
+    border-radius: 3.3rem;
+}
+
+.Email_box .email_innerbox{
+    position: absolute;
+    width: calc(100% - 4.1rem);
+    height: calc(100% - 4.1rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eamil_form{
+    position: relative;
+    width: 47%;
+    height: 100%;
+    border-radius: 2rem;
+    background-color: #eaeff2;
+}
+
+form{
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* background-color: white; */
+}
+
+.back{
+    display: flex;
+    align-items: center;
+    margin-bottom: -60px;
+    background-color: black;
+}
+
+.back i{
+  width: 15px;
+  margin: 0.3rem;
+  transition: .3s;
+  color: white;
+  margin-left: 20px;
+  
+}
+
+.back h4{
+  font-size: 0.7rem;
+  letter-spacing: -0.5px;
+  color: #bbb;
+  transition: .3s;
+}
+
+.back h4:hover{
+  cursor: pointer;
+  color: white;
+}
+
+
+.logo1{
+    display: flex;
+    align-items: center;
+    margin-bottom: -10px;
+}
+
+.logo1 img{
+    width: 50px;
+    margin: 0.3rem;
+    transition: .3s;
+}
+
+.logo1 h4{
+    font-size: 1.1rem;
+    margin-top: -9px;
+    letter-spacing: -0.5px;
+    color: #151111;
+    transition: .3s;
+    margin-left: 10px;
+}
+
+.logo1 h2{
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: #151111;
+    
+}
+
+.input-wrap{
+    position: relative;
+    height: 37px;
+    margin-bottom: 2rem;
+}
+
+.input-field{
+  margin-top: -30px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #bbb;
+    padding: 0;
+    font-size: 0.95rem;
+    color: #151111;
+    transition: .4s;
+}
+
+.input-field::-webkit-inner-spin-button,
+.input-field::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  display: none;
+}
+
+label{
+    margin-top: -30px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.95rem;
+    color: #bbb;
+    pointer-events: none;
+    transition: .4s;
+}
+
+.input-field.active{
+    border-bottom-color: #151111;
+
+}
+
+.input-field.active + label{
+    font-size: 0.75rem;
+    top: -2px;
+}
+
+.sign_up_btn{
+    display: inline-block;
+    width: 100%;
+    height: 43px;
+    background-color: #151111;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.8rem;
+    font-size: .8rem;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+}
+
+.sign_up_btn:hover{
+    background-color: #8371fd;
+}
+
+.text{
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.text a{
+  color: black;
+  transition: 0.3s;
+  text-decoration: underline;
+
+}
+
+.text a:hover{
+  color: #8371fd;
+}

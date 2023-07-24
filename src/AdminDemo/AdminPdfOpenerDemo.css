@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.Admin_Pdf_Opener_Body_Demo{
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.admin_backshadow_demo{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .admin_backshadow_demo .admin_custom_modal_demo{
+    width: 1300px;
+    height: 650px;
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .admin_delete_icon_demo{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: red;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-family: 'Raleway', sans-serif;
+    z-index: 2;
+}
+
+.admin_delete_icon_demo:hover{
+    background-color: #fff;
+    color: red;
+}
+
+.bx-x{
+    transition: transform .3s;
+}
+
+.admin_delete_icon_demo .bx-x:hover{
+    color: red;
+    transform: scale(1.5);
+}
+
+.zoom-item {
+    flex: 1;
+    text-align: center;
+}
+
